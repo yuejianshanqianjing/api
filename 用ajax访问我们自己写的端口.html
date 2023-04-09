@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<body>
+    <button class="node">get请求</button>
+    <button class="love">post请求</button>
+    <script>
+        const but1 =  document.querySelector('.node')
+        const but2 =  document.querySelector('.love')
+        but1.addEventListener('click',function(){
+            $.ajax({
+                type:'get',
+                url:'http://127.0.0.1/book',
+                data:{name:'ff',age:18},
+                success:function(res){
+                    console.log(res);
+                }
+            })
+        })
+        but2.addEventListener('click',function(){
+            $.ajax({
+                type:'post',
+                url:'http://127.0.0.1/name',
+                data:{age:18,name:'爱情'},
+                success:function(res){
+                    console.log(res);
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>
